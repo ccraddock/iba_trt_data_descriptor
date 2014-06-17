@@ -4,6 +4,7 @@
 \usepackage{babel}
 \usepackage{array}
 \usepackage{hyperref}
+\usepackage{url}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{booktabs}
 \usepackage{rotating}
@@ -17,23 +18,25 @@
 
 \begin{document}
 
-\title{The Virginia Tech Carilion Research Institute Test Re-test NeuroImaging Dataset}
+\title{The Intrinsic Brain Activity Test Re-test Neuroimaging Dataset}
 
 \author{R. Cameron Craddock\textsuperscript{1,2} \and  
         Jonathan Lisinski\textsuperscript{3} \and 
-        Stephen LaConte\textsuperscript{3,4,$\dagger$}}
+        Stephen LaConte\textsuperscript{3,4,5,6$\dagger$}}
 
 %\author{Firstname Lastname\textsuperscript{1}, Firstname
 %Lastname\textsuperscript{2{*}}}
 
 \maketitle
 
-\textsuperscript{1}Center for the Developing Brain, Child Mind Institute, New York, NY
-\textsuperscript{2}Center for Advanced Brain Imaging, Nathan Kline Institute for Psychiatric Research,      
-    Orangeburg, NY
-\textsuperscript{3}Virginia Tech Carilion Research Institute, Roanoke, VA
+\textsuperscript{1}Center for Advanced Brain Imaging, Nathan Kline Institute for Psychiatric Research,      
+    Orangeburg, NY, USA
+\textsuperscript{2}Center for the Developing Brain, Child Mind Institute, New York, NY, USA
+\textsuperscript{3}Virginia Tech Carilion Research Institute, Roanoke, VA, USA
 \textsuperscript{4}School of Biomedical Engineering and Sciences, Virginia Tech and Wake Forest University,
-    Blacksburg, VA
+    Blacksburg, VA, USA
+\textsuperscript{5}Department of Emergency Medicine, Virginia Tech Carilion School of Medicine, Roanoke, VA, USA
+\textsuperscript{6}Department of Radiology, Virginia Tech Carilion School of Medicine, Roanoke, VA, USA
 \textsuperscript{$\dagger$}Corresponding author: Stephen LaConte (slaconte@vtcri.vt.edu)
 
 
@@ -63,10 +66,13 @@ copy the reference list from the .bbl file that BibTeX generates and paste it
 into the main manuscript .tex file (and delete the associated 
 \textbackslash{}bibliography and \textbackslash{}bibliographystyle commands).}
 
+\textcolor{green}{357 words of 700 maximum}
 
-The multi-source interference task (MSIT) was explicitly designed to elicit robust activation of the dorsal anterior cingulate cortex in single participants\cite{Bush2006} and has been shown to robustly activate the entire ventral attention network \cite{needed}. This is achieved by combining elements of the Stroop tasks\cite{needed} with elements of Ericksson's Flanker task \cite{needed}. 
+Human brain function is divided amongst several intrinsic connectivity networks (ICN), which are constellations of brain regions that are synchronized by spontaneous brain activity. These networks have been observed to be consistent across individuals, scanning sessions and experimental paradigms. The persistence of these networks across rest and task conditions has led many to beleive that they play a central role in human cognition. Importantly the interaction between ICNs has been shown to be linked to inter-individual variability in task performance and imbalances in these interactions are beleived to underly mental disorders such as depression, ADHD, anxiety, and many more. Unfortunately, current experimental methodologies and computational tools are insufficient for fully exploring the interactions between networks and new methods need to be developed to understand this phenomena. 
 
+The Intrinsic Brain Activity Test - Retest (IBA-TRT) dataset was designed as a validation dataset for developing methods for modelling the interactions between ICNs both at rest and during task performance. The study employed an intra- and inter- session test-retest design in which two 10-minute resting state scans, and two 6.5-minute multi-source interference task (MSIT) \cite{bush} scans were acquired in each of two scanning sessions. The MSIT was chosen since it was explictily designed to robustly activates regions commonly associated with task positive networks and since it robustly deactivates the default network. Thirty-six individuals (18F, 20-48 years old) participated in the first scan, 14 of which (5F, 20-40 years old) returned two to six months later for a followup scan. 
 
+The IBA-TRT is a part of the Consortium for Reliability and Reproducibility (CoRR, \url{http://fcon_1000.projects.nitrc.org/indi/CoRR/html/}), which is an open science resource of publicly shared resting state data for assessing the reliability and reproducibility of resting state fMRI analyses. This is one of 33 datasets that are involved with CoRR that has amassed 5093 datasets from 1629 different subjects. Each of the datasets has a slightly different design, as each one of them was intended for slighly different purpose, but there should be sufficient overlap to aggregate dataset for a very large test-retest analysis. The IBA-TRT dataset is one of two datasets to offer task data, the Nathan Kline Institute test-retest dataset includes visual checkerboard and breath holding tasks. 
 
 \section*{Methods }
 
