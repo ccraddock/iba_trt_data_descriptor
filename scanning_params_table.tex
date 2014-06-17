@@ -1,0 +1,44 @@
+\begin{table}[ht!]
+\centering
+\caption{Image acquisition sequence parameters. Scans were acquired in the order presented.}
+\label{tab:rest_scan_params}
+
+\small
+
+\begin{tabular}{L{2in}M{1.5in}M{1.5in}M{1.5in}}
+
+\toprule%
+
+& {\bfseries Anatomical}
+& {\bfseries Rest (1 \& 2)}
+& {\bfseries MSIT (1 \& 2)} \\
+
+\midrule
+
+Sequence & 3D magnetization prepared rapid acquired gradient echo (MPRAGE) & gradient-echo echo-planar-imaging (GE-EPI)  & gradient-echo echo-planar-imaging (GE-EPI) \\
+Flip angle & $8^\circ$ & $90^\circ$ & $90^\circ$ \\
+Inversion time (TI) & 900 \si{\milli\second} & N/A & N/A \\
+Echo time (TE) & 3.02 \si{\milli\second} & 30 \si{\milli\second} & 30 \si{\milli\second} \\ 
+Repetition time (TR) & 2600 \si{\milli\second} & 1750 \si{\milli\second} & 1750 \si{\milli\second} \\
+Bandwidth per voxel (readout) & 130 \si{\hertz} & 2442 \si{\hertz} & 2442 \si{\hertz} \\
+Parallel acceleration & GRAPPA $\times 2$ & None & None \\
+Partial fourier & 6/8 phase \& 7/8 slice & Off & Off \\
+Number of Slices & 176 & 29 & 29 \\
+Slice orientation & saggital & axial-oblique & axial-oblique \\
+Slice phase encoding direction & anterior to posterior & anterior to posterior & anterior to posterior \\
+Slice acqusition order & sequential ascending & interleaved ascending & interleaved ascending \\
+Slice thickness & 1.0 \si{\milli\meter} & 3.6 \si{\milli\meter} & 3.6 \si{\milli\meter} \\
+Slice gap & 0.0 \si{\milli\meter} & 0.36 \si{\milli\meter} & 0.36 \si{\milli\meter} \\
+Field of view (FOV) & $256 \times 256$ \si{\milli\meter\squared} & $220 \times 220$ \si{\milli\meter\squared} & 
+    $220 \times 220$ \si{\milli\meter\squared} \\
+Acquisition matrix & $256 \times 256$ & $64 \times 64$ & $64 \times 64$ \\
+Slice in-plane resolution & $1.0 \times 1.0$ \si{\milli\meter\squared} & $3.44 \times 3.44$ \si{\milli\meter\squared} &
+    $3.44 \times 3.44$ \si{\milli\meter\squared} \\
+Number of measurements & 1 & 343 & 224 \\
+Acquisition time (TA) & 4 \si{\minute} 38 \si{\second} & 10 \si{\minute} 4 \si{\second} &
+    6 \si{\minute} 36 \si{\second} \\ 
+
+\bottomrule    
+\end{tabular}
+
+\end{table}
