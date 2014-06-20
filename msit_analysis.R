@@ -79,7 +79,12 @@ ggplot(subset(pt_dframe,Session=="Session 1"),aes(x=Condition,y=RT))+geom_boxplo
 # get the list of subjects that are only in session 2
 sess2pid=unique(pt_dframe$PID[pt_dframe$Session=="Session 2"])
 
+xx$sessbytask<-with(xx,interaction(Session,Task,sep= "\n"))
+factor(xx$sessbytask,c("Session 1\nMSIT 1","Session 1\nMSIT 2","Session 2\nMSIT 1", "Session 2\nMSIT 2"))
+
 ggplot(subset(pt_dframe,PID %in% sess2pid),aes(x=Condition,y=RT))+geom_boxplot()+facet_grid(".~Session + Task")+theme_bw()
 ggplot(xx,aes(x=Condition,y=RT,fill=Session,colour=Task))+geom_boxplot(position=position_dodge(width=.85))+scale_fill_manual(values=c("orange","white"))+scale_colour_manual(values=c("brown","blue"))+theme_bw()
 
 ggplot(xx,aes(x=factor(xx$sessbytask,c("Session 1 MSIT 1","Session 1 MSIT 2","Session 2 MSIT 1", "Session 2 MSIT 2")),y=RT,fill=Condition))+geom_boxplot(position=position_dodge(width=.85))+scale_fill_manual(values=c("orange","white"))+scale_colour_manual(values=c("brown","blue"))+theme_bw()
+
+ggplot(xx,aes(x=factor(xx$sessbytask,c("Session 1 MSIT 1","Session 1 MSIT 2","Session 2 MSIT 1", "Session 2 MSIT 2")),y=RT,fill=Condition))+geom_violin(position=position_dodge(width=.85))+geom_boxplot(width=.45,position=position_dodge(width=.85))+scale_fill_grey(start=0.9,end=1)+scale_colour_manual(values=c("brown","blue"))+theme_bw()
