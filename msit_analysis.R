@@ -87,4 +87,4 @@ ggplot(xx,aes(x=Condition,y=RT,fill=Session,colour=Task))+geom_boxplot(position=
 
 ggplot(xx,aes(x=factor(xx$sessbytask,c("Session 1 MSIT 1","Session 1 MSIT 2","Session 2 MSIT 1", "Session 2 MSIT 2")),y=RT,fill=Condition))+geom_boxplot(position=position_dodge(width=.85))+scale_fill_manual(values=c("orange","white"))+scale_colour_manual(values=c("brown","blue"))+theme_bw()
 
-ggplot(xx,aes(x=factor(xx$sessbytask,c("Session 1 MSIT 1","Session 1 MSIT 2","Session 2 MSIT 1", "Session 2 MSIT 2")),y=RT,fill=Condition))+geom_violin(position=position_dodge(width=.85))+geom_boxplot(width=.45,position=position_dodge(width=.85))+scale_fill_grey(start=0.9,end=1)+scale_colour_manual(values=c("brown","blue"))+theme_bw()
+ggplot(xx,aes(x=factor(xx$sessbytask,c("Session 1\nMSIT 1","Session 1\nMSIT 2","Session 2\nMSIT 1", "Session 2\nMSIT 2")),,y=RT,fill=Condition))+geom_violin(position=position_dodge(width=.85))+geom_boxplot(width=.45,position=position_dodge(width=.85))+scale_fill_grey(start=0.9,end=1)+scale_colour_manual(values=c("brown","blue"))+theme_bw()
