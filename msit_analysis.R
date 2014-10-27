@@ -74,10 +74,46 @@ pt_dframe$Condition=factor(pt_dframe$Condition,levels=c("con","incon"), labels=c
 
 
 ## now lets work on some plots
-ggplot(subset(pt_dframe,Session=="Session 1"),aes(x=Condition,y=RT))+geom_boxplot()+facet_grid(".~Task")+theme_bw()
+one_col_width=88.0/25.4
+two_col_width=180.0/25.4
+
+#quartz(title, width, height, pointsize, family, antialias, type,
+#       file = NULL, bg, canvas, dpi)
+quartz(title="figure1",width=one_col_width,height=90/25.4)
+pt_dframe$sessbytask<-with(pt_dframe,interaction(Session,Task,sep= "\n"))
+p1=ggplot(subset(pt_dframe,Session=="Session 1"),
+          aes(x=factor(sessbytask,
+                       levels=c("Session 1\nMSIT 1","Session 1\nMSIT 2","Session 2\nMSIT 1", "Session 2\nMSIT 2")),
+          y=RT,fill=Condition))+
+  geom_boxplot(position=position_dodge(width=0.45),width=0.5)+
+  theme_bw(base_size=10,base_family="Helvetica")+
+  scale_fill_grey(start=0.8,end=1)+
+  scale_y_continuous(limits=c(400,1300))+
+  ylab("RT (ms)")+
+  xlab("Session and Task")+
+  theme(legend.position="none")
 	
 # get the list of subjects that are only in session 2
 sess2pid=unique(pt_dframe$PID[pt_dframe$Session=="Session 2"])
+p2=ggplot(subset(pt_dframe,PID %in% sess2pid),
+  aes(x=factor(sessbytask,
+               levels=c("Session 1\nMSIT 1","Session 1\nMSIT 2","Session 2\nMSIT 1", "Session 2\nMSIT 2")),
+      y=RT,fill=Condition))+
+  geom_boxplot(position=position_dodge(width=0.45),width=0.5)+
+  theme_bw(base_size=10,base_family="Helvetica")+
+  scale_fill_grey(start=0.8,end=1)+
+  scale_y_continuous(limits=c(400,1300))+
+  ylab("RT (ms)")+
+  xlab("Session and Task")+ 
+  theme(legend.position="none")
+
+quartz(title="figure1",width=two_col_width,height=90/25.4)
+grid.newpage()
+pushViewport(viewport(layout = grid.layout(1, 11)))
+vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
+print(p1, vp = vplayout(1, 1:4))  # key is to define vplayout
+print(p2, vp = vplayout(1, 5:11))
+
 
 xx$sessbytask<-with(xx,interaction(Session,Task,sep= "\n"))
 factor(xx$sessbytask,c("Session 1\nMSIT 1","Session 1\nMSIT 2","Session 2\nMSIT 1", "Session 2\nMSIT 2"))
